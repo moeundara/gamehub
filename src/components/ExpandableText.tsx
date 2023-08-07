@@ -1,4 +1,4 @@
-import { Button } from "@chakra-ui/react";
+import { Button, Text } from "@chakra-ui/react";
 import { useState } from "react";
 
 interface Props {
@@ -10,7 +10,7 @@ const ExpandableText = ({ children }: Props) => {
   const limit = 300;
 
   if (!children) return null;
-  if (children.length <= limit) return children;
+  if (children.length <= limit) return <Text>children</Text>;
 
   const summary = expanded ? children : children.substring(0, limit) + "...";
   return (
